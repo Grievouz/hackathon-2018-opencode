@@ -1,0 +1,21 @@
+#injected-app {
+    width: 300px !important;
+    height: 100vh !important;
+
+    background: #cfcfcf;
+    border-left: gray 2px inset;
+
+    z-index: 1000;
+    position: fixed;
+
+    right: 0 !important;
+    top: 0 !important;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-family: Arial;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "hackathon-extension",
+  "version": "1.0.0",
+  "description": "Basically a Chrome extension.",
+  "main": "popup.js",
+  "scripts": {
+    "start": "start http://localhost:9000/webpack-dev-server/popup.html & webpack-dev-server --hot",
+    "build": "webpack",
+    "autobuild": "webpack -w"
+  },
+  "author": "tammo ronke",
+  "dependencies": {
+    "@types/react": "^16.0.34",
+    "@types/react-dom": "^16.0.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.20.1",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1"
+  }
+}
