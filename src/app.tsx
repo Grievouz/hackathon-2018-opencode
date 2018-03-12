@@ -1,35 +1,31 @@
 import "./app.css";
 import * as React from "react";
 
-let pressedKeys: {allKeys: string} = {
-    allKeys: ""
-};
 
-class App extends React.Component<{}, {}> {
+class App extends React.Component<{}, {
+    content: JSX.Element[]
+}> {
+
+    public static sdf: string[] = []
 
     constructor(props){
         super(props);
-    }
-
-    componentDidMount(){
-        Object.defineProperty(pressedKeys, "watch" , () => {
-            this.setState({
-                text: pressedKeys.allKeys
-            })
-        });
+        this.state ={
+            content: []
+        }
     }
 
     render() {
         return(
             <div id={"injected-app"}>
+                {this.state.content}
             </div>
         );
     }
 }
 
 window.onkeypress = (event) =>{
-    pressedKeys.allKeys += event.key;
-    document.getElementById("injected-app").innerText = pressedKeys.allKeys;
+    document.getElementById("injected-app").innerHTML += "<div>"+ event.key +"</div>";
 };
 
 export default App;
