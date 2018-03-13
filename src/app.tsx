@@ -1,31 +1,21 @@
 import "./app.css";
 import * as React from "react";
+import Sidebar from "./components/sidebar";
+import SidebarStore from "./stores/sidebar";
+import Threshold from "./components/threshold";
+import {observer} from "mobx-react";
 
-
-class App extends React.Component<{}, {
-    content: JSX.Element[]
-}> {
-
-    public static sdf: string[] = []
-
-    constructor(props){
-        super(props);
-        this.state ={
-            content: []
-        }
-    }
+@observer
+class App extends React.Component<{}, {}> {
 
     render() {
         return(
             <div id={"injected-app"}>
-                {this.state.content}
+                <Threshold store={SidebarStore}/>
+                <Sidebar store={SidebarStore}/>
             </div>
         );
     }
 }
-
-window.onkeypress = (event) =>{
-    document.getElementById("injected-app").innerHTML += "<div>"+ event.key +"</div>";
-};
 
 export default App;

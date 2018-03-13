@@ -6,7 +6,7 @@ module.exports = {
 
     output: {
         filename: "js/bundle.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "public")
     },
 
     devtool: "source-map",
@@ -35,12 +35,8 @@ module.exports = {
         ]
     },
 
-    plugins: [
-        new ExtractTextPlugin("css/bundle.css")
-    ],
-
     devServer: {
-        contentBase: path.resolve(__dirname, "dist"),
+        contentBase: path.resolve(__dirname, "public"),
         inline: true,
         compress: true,
         hot: true,

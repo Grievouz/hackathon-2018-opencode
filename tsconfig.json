@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./public/",
     "module": "commonjs",
     "target": "es6",
     "jsx": "react",
-    "sourceMap": true
+    "sourceMap": true,
+    "inlineSources": true,
+    "experimentalDecorators": true
   },
   "include": [
     "./src/**/*"
