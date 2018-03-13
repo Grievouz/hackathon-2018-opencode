@@ -3,7 +3,6 @@ import * as React from "react";
 import {observer} from "mobx-react";
 import {SidebarStoreType} from "../stores/sidebar";
 import ContentCard from "./contentCard";
-import {AppStoreType} from "../stores/app";
 
 @observer
 export default class Sidebar extends React.Component<{
@@ -18,6 +17,8 @@ export default class Sidebar extends React.Component<{
 
         this.state = {
             cards: [
+                <ContentCard/>,
+                <ContentCard/>,
                 <ContentCard/>,
                 <ContentCard/>
             ]
