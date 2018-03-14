@@ -10,7 +10,12 @@
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
-  "permissions":["activeTab", "tabs"],
+  "permissions":[
+    "activeTab",
+    "tabs",
+    "storage",
+    "unlimitedStorage"
+  ],
 
   "content_scripts": [
     {
@@ -18,8 +23,12 @@
         "http://*/*",
         "https://*/*"
       ],
-      "js": ["./js/inject.js"]
+      "js": ["js/inject.js"]
     }
+  ],
+
+  "web_accessible_resources": [
+    "img/*"
   ]
 
 }

@@ -1,4 +1,4 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ChromeExtensionReloader  = require('webpack-chrome-extension-reloader');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
@@ -16,7 +16,7 @@ module.exports = {
     devtool: "source-map",
 
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".css"]
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".css"],
     },
 
     module: {
@@ -34,7 +34,8 @@ module.exports = {
             },
             {
                 enforce: "pre",
-                test: /\.js$/, loader: "source-map-loader"
+                test: /\.js$/,
+                loader: "source-map-loader"
             },
         ]
     },
@@ -52,8 +53,8 @@ module.exports = {
         contentBase: path.resolve(__dirname, "dist"),
         progress: true,
         inline: true,
+        open: "http://localhost:9000/webpack-dev-server/dev_environment.html",
         compress: true,
-        open: true,
         hot: true,
         port: 9000
     }
