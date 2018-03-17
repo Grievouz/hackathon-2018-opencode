@@ -1,4 +1,5 @@
-import {observable} from "mobx";
+import {computed, observable} from "mobx";
+import SidebarStore from  "./sidebar";
 
 export class ThresholdStore{
     @observable width: string;

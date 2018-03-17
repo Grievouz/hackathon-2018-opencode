@@ -1,20 +1,27 @@
 {
   "manifest_version": 2,
-  "name": "Chrome Extension",
+  "name": "BarBra",
   "description": "This is a Chrome extension",
-  "version": "1.0.0",
-  "icons":{
-    "128": "icon.png"
+  "version": "0.1.0",
+  "icons": {
+    "16": "img/icon/icon16.png",
+    "48": "img/icon/icon48.png",
+    "128": "img/icon/icon128.png"
   },
   "browser_action":{
-    "default_icon": "icon.png",
+    "default_icon": {
+      "19": "img/icon/icon19.png",
+      "38": "img/icon/icon38.png"
+    },
     "default_popup": "popup.html"
   },
   "permissions":[
     "activeTab",
     "tabs",
     "storage",
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "http://*/*",
+    "https://*/*"
   ],
 
   "content_scripts": [
@@ -23,12 +30,13 @@
         "http://*/*",
         "https://*/*"
       ],
-      "js": ["js/inject.js"]
+      "js": ["js/inject.js"],
+      "all_frames": true
     }
   ],
 
   "web_accessible_resources": [
-    "img/*"
+    "*"
   ]
 
 }

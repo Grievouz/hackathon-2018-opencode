@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Just a Chrome extension.",
   "scripts": {
-    "start": "webpack -w",
+    "serve": "webpack -w",
     "build": "webpack"
   },
   "author": "tammo ronke",
@@ -16,7 +16,6 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.60",
     "awesome-typescript-loader": "^3.4.1",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.9",
@@ -26,8 +25,6 @@
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.1",
     "typescript": "^2.6.2",
-    "webpack": "^3.10.0",
-    "webpack-chrome-extension-reloader": "^0.6.6",
-    "webpack-dev-server": "^2.10.1"
+    "webpack": "^3.10.0"
   }
 }

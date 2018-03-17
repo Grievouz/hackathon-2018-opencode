@@ -47,15 +47,5 @@ module.exports = {
                 to: "./"
             }
         ])
-    ],
-
-    devServer: {
-        contentBase: path.resolve(__dirname, "dist"),
-        progress: true,
-        inline: true,
-        open: "http://localhost:9000/webpack-dev-server/dev_environment.html",
-        compress: true,
-        hot: true,
-        port: 9000
-    }
+    ]
 };
