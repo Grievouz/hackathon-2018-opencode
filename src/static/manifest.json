@@ -4,14 +4,14 @@
   "description": "This is a Chrome extension",
   "version": "0.1.0",
   "icons": {
-    "16": "img/icon/icon16.png",
-    "48": "img/icon/icon48.png",
-    "128": "img/icon/icon128.png"
+    "16": "icon/icon16.png",
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
   },
   "browser_action":{
     "default_icon": {
-      "19": "img/icon/icon19.png",
-      "38": "img/icon/icon38.png"
+      "19": "icon/icon19.png",
+      "38": "icon/icon38.png"
     },
     "default_popup": "popup.html"
   },
@@ -36,7 +36,7 @@
   ],
 
   "web_accessible_resources": [
-    "*"
+    "resources/*"
   ]
 
 }

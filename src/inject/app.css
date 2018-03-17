@@ -15,3 +15,11 @@
     pointer-events: auto;
 }
 
+#injected-react-base,
+#injected-react-base::before,
+#injected-react-base::after,
+#injected-react-base *
+#injected-react-base *::before,
+#injected-react-base *::after {
+    all: revert;
+}
