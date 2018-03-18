@@ -1,16 +1,15 @@
 import "./app.css";
-import "./europa.css"
+import "./fonts/europa.css"
 import * as React from "react";
 import Sidebar from "./components/sidebar"
 import Threshold from "./components/threshold";
 import {render} from "react-dom";
-import {isPlainObject} from "mobx/lib/utils/utils";
 
 class App extends React.Component<{}, {}> {
 
     render() {
         return (
-            <div id={"injected-app"}>
+            <div id={"app-base"}>
                 <Threshold/>
                 <Sidebar/>
             </div>
@@ -18,8 +17,8 @@ class App extends React.Component<{}, {}> {
     }
 }
 
-let base: HTMLDivElement = document.createElement("div");
-base.id = "injected-react-base";
+let base: HTMLElement = document.createElement("div");
+base.id = "react-base"
 document.body.appendChild(base);
 
-render(<App/>, document.getElementById("injected-react-base"));
+render(<App/>, base);

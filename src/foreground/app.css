@@ -1,0 +1,16 @@
+#app-base {
+     width: 100vw !important;
+     height: 100vh !important;
+
+     position: fixed;
+     top: 0;
+     left: 0;
+
+     z-index: 100000000;
+     pointer-events: none;
+    font-family: Europa;
+}
+#app-base *{
+    pointer-events: auto;
+    all: initial;
+}

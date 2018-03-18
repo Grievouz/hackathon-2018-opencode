@@ -30,8 +30,8 @@
         "http://*/*",
         "https://*/*"
       ],
-      "js": ["js/inject.js"],
-      "all_frames": true
+      "js": ["resources/js/bundle.foreground.js"]
+
     }
   ],
 

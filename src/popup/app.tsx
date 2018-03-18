@@ -13,6 +13,4 @@ export default class Popup extends React.Component<{}, {}> {
     }
 }
 
-console.log()
-
 render(<Popup/>, document.getElementById("react-base"));

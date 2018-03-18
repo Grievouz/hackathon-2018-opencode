@@ -6,12 +6,14 @@ import SidebarStore from "../stores/sidebar";
 @observer
 export default class Sidebar extends React.Component<{}, {}> {
 
+    private sidebar;
+
     constructor(props){
         super(props)
         this.props = props;
 
         window.addEventListener("click", (event) => {
-            if (!document.getElementById("injected-sidebar").contains(event.target as Node)) {
+            if (!this.sidebar.contains(event.target as Node)) {
                 SidebarStore.visible = false;
             }
         });
@@ -19,13 +21,10 @@ export default class Sidebar extends React.Component<{}, {}> {
 
     render() {
         return(
-            <div id={"injected-sidebar"} className={SidebarStore.visible ? "opened" : "closed"}>
+            <div ref={(node) => this.sidebar = node} id={"injected-sidebar"} className={SidebarStore.visible ? "opened" : "closed"}>
                 {SidebarStore.state}
+                Test
             </div>
         );
     }
-}
-
-export enum SidebarStates{
-    Login
 }
