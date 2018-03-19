@@ -17,8 +17,4 @@ class App extends React.Component<{}, {}> {
     }
 }
 
-let base: HTMLElement = document.createElement("div");
-base.id = "react-base"
-document.body.appendChild(base);
-
 render(<App/>, base);

@@ -3,6 +3,8 @@ const path = require("path");
 
 module.exports = {
     entry: {
+        inject: "./src/inject.tsx",
+
         popup: "./src/popup/app.tsx",
         foreground: "./src/foreground/app.tsx",
     },

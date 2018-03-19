@@ -16,6 +16,7 @@
     "default_popup": "popup.html"
   },
   "permissions":[
+    "background",
     "activeTab",
     "tabs",
     "storage",
@@ -30,8 +31,7 @@
         "http://*/*",
         "https://*/*"
       ],
-      "js": ["resources/js/bundle.foreground.js"]
-
+      "js": ["resources/js/bundle.inject.js"]
     }
   ],
 
