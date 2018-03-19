@@ -1,16 +1,19 @@
+const ChromeExtensionReloader  = require('webpack-chrome-extension-reloader');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
     entry: {
-        popup: "./src/popup/app.tsx",
-        foreground: "./src/foreground/app.tsx",
+        inject: "./src/inject/app.tsx",
+        popup: "./src/popup/app.tsx"
     },
 
     output: {
-        filename: "resources/js/bundle.[name].js",
+        filename: "js/[name].js",
         path: path.resolve(__dirname, "dist")
     },
+
+    devtool: "source-map",
 
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".css"],
@@ -25,8 +28,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    {loader: "style-loader"},
-                    {loader: "css-loader"}
+                    { loader: "style-loader" },
+                    { loader: "css-loader" }
                 ]
             },
             {
@@ -44,6 +47,15 @@ module.exports = {
                 to: "./"
             }
         ])
-    ]
+    ],
 
+    devServer: {
+        contentBase: path.resolve(__dirname, "dist"),
+        progress: true,
+        inline: true,
+        open: "http://localhost:9000/webpack-dev-server/dev_environment.html",
+        compress: true,
+        hot: true,
+        port: 9000
+    }
 };

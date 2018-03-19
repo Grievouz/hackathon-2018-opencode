@@ -7,7 +7,7 @@ export default class Popup extends React.Component<{}, {}> {
     render() {
         return(
             <div id={"popup-base"}>
-                    React funkt!
+                    React funzt!
             </div>
         );
     }
