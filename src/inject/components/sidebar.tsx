@@ -8,12 +8,15 @@ export default class Sidebar extends React.Component<{
     store: SidebarStore
 }, {}> {
 
+    public reference: HTMLElement;
+
     constructor(props){
         super(props)
         this.props = props;
 
+        //If clicked outside the sidebar close it
         window.addEventListener("click", (event) => {
-            if (!document.getElementById("injected-sidebar").contains(event.target as Node)) {
+            if (!this.reference.contains(event.target as Node)) {
                 this.props.store.visible = false;
             }
         });
@@ -21,7 +24,7 @@ export default class Sidebar extends React.Component<{
 
     render() {
         return(
-            <div id={"injected-sidebar"} className={this.props.store.visible ? "opened" : "closed"}>
+            <div ref={(node) => this.reference = node}id={"injected-sidebar"} className={this.props.store.visible ? "opened" : "closed"}>
                 {this.props.store.state}
             </div>
         );

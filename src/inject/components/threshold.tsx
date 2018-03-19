@@ -11,6 +11,7 @@ export default class Threshold extends React.Component<{
 
     private mouseOver: boolean = false;
 
+    //If mouse is over threshold for more then 50ms the sidebar opens
     private async handleOnMouseEnter(){
         this.mouseOver = true;
         await this.sleep(50);
